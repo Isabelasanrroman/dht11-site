@@ -1,0 +1,1265 @@
+/* ==========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --verde: #79bfa5;
+    --verde-claro: #dff3ea;
+
+    --azul: #7db9d6;
+    --azul-claro: #e4f3f9;
+
+    --rosa: #e8a9bb;
+    --rosa-claro: #fce9ef;
+
+    --branco: #ffffff;
+    --fundo: #f6faf8;
+
+    --texto: #31423e;
+    --texto-claro: #82908c;
+
+    --borda: rgba(255, 255, 255, 0.75);
+
+    --sombra:
+        0 25px 70px rgba(62, 104, 91, 0.10);
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: 'DM Sans', sans-serif;
+
+    color: var(--texto);
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(214, 241, 231, 0.75),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(218, 238, 247, 0.80),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(252, 226, 235, 0.60),
+            transparent 30%
+        ),
+        var(--fundo);
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================================
+   FUNDO DECORATIVO
+========================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(177, 220, 202, 0.13);
+
+    filter: blur(80px);
+
+    top: -180px;
+    left: -150px;
+
+    pointer-events: none;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background: rgba(232, 169, 187, 0.10);
+
+    filter: blur(90px);
+
+    right: -160px;
+    bottom: -150px;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   PÁGINA
+========================================================== */
+
+.pagina {
+    width: min(1120px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 55px 0 30px;
+
+    position: relative;
+}
+
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.cabecalho {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 75px;
+}
+
+
+.marca {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.icone-marca {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    color: white;
+
+    font-size: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8bcdb0,
+            #78abc7
+        );
+
+    box-shadow:
+        0 12px 30px rgba(108, 164, 144, 0.25);
+}
+
+
+.mini-titulo {
+    display: block;
+
+    color: #88a39a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.4px;
+
+    margin-bottom: 4px;
+}
+
+
+.cabecalho h1 {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.6px;
+
+    color: #344640;
+}
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(125, 191, 165, 0.20);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.60);
+
+    backdrop-filter: blur(15px);
+
+    color: #71837c;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.status-ponto {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #78c49f;
+
+    box-shadow:
+        0 0 0 5px rgba(120, 196, 159, 0.12);
+
+    animation: pulsar 2s infinite;
+}
+
+
+@keyframes pulsar {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(120, 196, 159, 0.30);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 7px rgba(120, 196, 159, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(120, 196, 159, 0);
+    }
+}
+
+
+/* ==========================================================
+   INTRODUÇÃO
+========================================================== */
+
+.introducao {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+
+    margin-bottom: 45px;
+
+    position: relative;
+}
+
+
+.etiqueta {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border-radius: 50px;
+
+    background: rgba(223, 243, 234, 0.70);
+
+    border: 1px solid rgba(121, 191, 165, 0.18);
+
+    color: #6fa78f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+.etiqueta i {
+    font-size: 10px;
+}
+
+
+.introducao h2 {
+    max-width: 650px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #30423d;
+
+    font-weight: 600;
+}
+
+
+.introducao h2 span {
+    color: #79bfa5;
+}
+
+
+.introducao p {
+    max-width: 510px;
+
+    margin-top: 18px;
+
+    color: #84928e;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   FLOR DECORATIVA
+========================================================== */
+
+.flor-decorativa {
+    width: 150px;
+    height: 150px;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    border-radius: 42px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.80),
+            rgba(239, 248, 244, 0.45)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 20px 50px rgba(69, 104, 93, 0.10);
+}
+
+
+.flor {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 70px;
+    height: 70px;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.flor span {
+    position: absolute;
+
+    width: 30px;
+    height: 40px;
+
+    border-radius: 60% 40% 60% 40%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6c8d6,
+            #dfa0b7
+        );
+
+    box-shadow:
+        0 5px 15px rgba(220, 151, 177, 0.20);
+}
+
+
+.flor span:nth-child(1) {
+    left: 20px;
+    top: 0;
+}
+
+
+.flor span:nth-child(2) {
+    left: 40px;
+    top: 22px;
+
+    transform: rotate(72deg);
+}
+
+
+.flor span:nth-child(3) {
+    left: 25px;
+    top: 40px;
+
+    transform: rotate(145deg);
+}
+
+
+.flor span:nth-child(4) {
+    left: 3px;
+    top: 35px;
+
+    transform: rotate(215deg);
+}
+
+
+.flor span:nth-child(5) {
+    left: -2px;
+    top: 12px;
+
+    transform: rotate(285deg);
+}
+
+
+.flor b {
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    background: #e6b46f;
+
+    border-radius: 50%;
+
+    left: 27px;
+    top: 27px;
+
+    box-shadow:
+        0 2px 8px rgba(193, 144, 79, 0.25);
+}
+
+
+.folha {
+    position: absolute;
+
+    color: #8ac2a6;
+
+    font-size: 22px;
+}
+
+
+.folha-1 {
+    bottom: 17px;
+    right: 18px;
+
+    transform: rotate(25deg);
+}
+
+
+.folha-2 {
+    top: 20px;
+    left: 18px;
+
+    transform: rotate(-45deg);
+
+    opacity: 0.65;
+}
+
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+
+.card {
+    position: relative;
+
+    min-height: 310px;
+
+    padding: 28px;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    backdrop-filter: blur(25px);
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 35px 80px rgba(62, 104, 91, 0.15);
+}
+
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    top: -120px;
+    right: -80px;
+
+    opacity: 0.7;
+}
+
+
+.temperatura {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.90),
+            rgba(232, 245, 250, 0.80)
+        );
+}
+
+
+.temperatura::before {
+    background: #ccebf5;
+}
+
+
+.umidade {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.90),
+            rgba(232, 247, 239, 0.80)
+        );
+}
+
+
+.umidade::before {
+    background: #d4efdf;
+}
+
+
+/* ==========================================================
+   TOPO DOS CARDS
+========================================================== */
+
+.card-topo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.icone-card {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    font-size: 19px;
+}
+
+
+.temperatura .icone-card {
+    color: #6ea9c1;
+
+    background:
+        rgba(204, 235, 245, 0.85);
+}
+
+
+.umidade .icone-card {
+    color: #65a487;
+
+    background:
+        rgba(212, 239, 223, 0.90);
+}
+
+
+.card-legenda {
+    color: #70817b;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.tendencia {
+    margin-left: auto;
+
+    font-size: 15px;
+
+    opacity: 0.55;
+}
+
+
+.temperatura .tendencia {
+    color: #6ea9c1;
+}
+
+
+.umidade .tendencia {
+    color: #65a487;
+}
+
+
+/* ==========================================================
+   CONTEÚDO DOS CARDS
+========================================================== */
+
+.card-conteudo {
+    min-height: 165px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.valor-area h2 {
+    font-size: clamp(45px, 5vw, 60px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    color: #354640;
+
+    font-weight: 700;
+}
+
+
+.valor-area span {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #8b9995;
+
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   ILUSTRAÇÕES DOS CARDS
+========================================================== */
+
+.ilustracao {
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+
+    position: relative;
+
+    margin-right: 5px;
+}
+
+
+.temperatura-ilustracao {
+    color: #78b4cc;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.90),
+            rgba(210, 239, 247, 0.60)
+        );
+
+    box-shadow:
+        inset 0 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+
+.umidade-ilustracao {
+    color: #73ad91;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.90),
+            rgba(213, 240, 224, 0.65)
+        );
+
+    box-shadow:
+        inset 0 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+
+.ilustracao i {
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* ==========================================================
+   LINHA INFERIOR DOS CARDS
+========================================================== */
+
+.linha-info {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(115, 145, 136, 0.10);
+
+    color: #8b9995;
+
+    font-size: 11px;
+}
+
+
+.linha-info span:first-child {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.linha-info i {
+    font-size: 7px;
+}
+
+
+.temperatura .linha-info i {
+    color: #7bb5cd;
+}
+
+
+.umidade .linha-info i {
+    color: #79b195;
+}
+
+
+.ao-vivo {
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+
+    font-weight: 700;
+
+    color: #7ba08f;
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+    padding: 0 8px;
+
+    color: #94a29e;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2px;
+}
+
+
+.footer-esquerda,
+.footer-direita {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.footer-esquerda i {
+    color: #78aec5;
+}
+
+
+.footer-direita i {
+    color: #82b79d;
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width: 800px) {
+
+    .pagina {
+        width: min(100% - 28px, 650px);
+
+        padding-top: 30px;
+    }
+
+
+    .cabecalho {
+        margin-bottom: 50px;
+    }
+
+
+    .introducao {
+        align-items: flex-start;
+    }
+
+
+    .flor-decorativa {
+        width: 115px;
+        height: 115px;
+    }
+
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .card {
+        min-height: 290px;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .pagina {
+        width: calc(100% - 24px);
+
+        padding-top: 22px;
+    }
+
+
+    .cabecalho {
+        align-items: flex-start;
+
+        margin-bottom: 42px;
+    }
+
+
+    .icone-marca {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 15px;
+    }
+
+
+    .cabecalho h1 {
+        font-size: 18px;
+    }
+
+
+    .mini-titulo {
+        font-size: 8px;
+
+        letter-spacing: 1.7px;
+    }
+
+
+    .status {
+        padding: 8px 10px;
+
+        font-size: 9px;
+    }
+
+
+    .introducao {
+        display: block;
+
+        margin-bottom: 30px;
+    }
+
+
+    .introducao h2 {
+        font-size: 40px;
+
+        letter-spacing: -1.7px;
+    }
+
+
+    .introducao p {
+        font-size: 13px;
+
+        margin-top: 14px;
+    }
+
+
+    .flor-decorativa {
+        display: none;
+    }
+
+
+    .card {
+        padding: 23px;
+
+        border-radius: 25px;
+
+        min-height: 275px;
+    }
+
+
+    .card-conteudo {
+        min-height: 145px;
+    }
+
+
+    .valor-area h2 {
+        font-size: 48px;
+    }
+
+
+    .ilustracao {
+        width: 82px;
+        height: 82px;
+
+        font-size: 29px;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+
+        align-items: flex-start;
+
+        padding-bottom: 15px;
+    }
+}
+
+
+@media (max-width: 390px) {
+
+    .status {
+        display: none;
+    }
+
+
+    .introducao h2 {
+        font-size: 36px;
+    }
+
+
+    .valor-area h2 {
+        font-size: 42px;
+    }
+
+
+    .ilustracao {
+        width: 72px;
+        height: 72px;
+
+        font-size: 25px;
+    }
+}
+
+/* ==========================================================
+   ALERTA DE TEMPERATURA
+   ATIVO ENTRE 29°C E 30°C
+========================================================== */
+
+body.alerta-temperatura {
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255, 215, 225, 0.90),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 190, 205, 0.75),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 225, 231, 0.85),
+            transparent 32%
+        ),
+
+        #fff5f7;
+
+    transition: background 0.8s ease;
+
+}
+
+
+/* ==========================================================
+   CABEÇALHO NO ALERTA
+========================================================== */
+
+body.alerta-temperatura .icone-marca {
+
+    background:
+        linear-gradient(
+            135deg,
+            #d9859e,
+            #e7a2b5
+        );
+
+    box-shadow:
+        0 12px 30px rgba(205, 119, 145, 0.25);
+
+}
+
+
+body.alerta-temperatura .status {
+
+    border-color:
+        rgba(220, 130, 155, 0.20);
+
+    color: #b75f7a;
+
+}
+
+
+body.alerta-temperatura .status-ponto {
+
+    background: #e47b9a;
+
+    box-shadow:
+        0 0 0 5px rgba(228, 123, 154, 0.14);
+
+}
+
+
+/* ==========================================================
+   INTRODUÇÃO NO ALERTA
+========================================================== */
+
+body.alerta-temperatura .etiqueta {
+
+    background:
+        rgba(255, 224, 232, 0.75);
+
+    border-color:
+        rgba(220, 130, 155, 0.18);
+
+    color: #bd6681;
+
+}
+
+
+body.alerta-temperatura .introducao h2 span {
+
+    color: #c76d88;
+
+}
+
+
+/* ==========================================================
+   CARD DE TEMPERATURA NO ALERTA
+========================================================== */
+
+body.alerta-temperatura .temperatura {
+
+    border-color:
+        rgba(230, 145, 165, 0.40);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.92),
+            rgba(255, 235, 241, 0.88)
+        );
+
+    box-shadow:
+        0 30px 75px rgba(205, 113, 138, 0.17);
+
+}
+
+
+body.alerta-temperatura .temperatura .icone-card {
+
+    color: #c45e7b;
+
+    background:
+        rgba(243, 173, 192, 0.48);
+
+}
+
+
+body.alerta-temperatura .temperatura .tendencia {
+
+    color: #c45e7b;
+
+}
+
+
+body.alerta-temperatura .temperatura .valor-area h2 {
+
+    color: #c45e7b;
+
+}
+
+
+body.alerta-temperatura .temperatura-ilustracao {
+
+    color: #d06d89;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.95),
+            rgba(250, 199, 214, 0.70)
+        );
+
+    box-shadow:
+        inset 0 0 0 12px rgba(255, 255, 255, 0.30);
+
+}
+
+
+body.alerta-temperatura .temperatura .linha-info {
+
+    border-top-color:
+        rgba(205, 113, 138, 0.14);
+
+}
+
+
+body.alerta-temperatura .temperatura .linha-info i {
+
+    color: #d06d89;
+
+}
+
+
+body.alerta-temperatura .temperatura .ao-vivo {
+
+    color: #c76d88;
+
+}
+
+
+/* ==========================================================
+   FLOR NO ALERTA
+========================================================== */
+
+body.alerta-temperatura .flor span {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef9fb6,
+            #df7896
+        );
+
+}
+
+
+body.alerta-temperatura .flor b {
+
+    background: #f0c979;
+
+}
+
+
+body.alerta-temperatura .folha {
+
+    color: #87b99b;
+
+}

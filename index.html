@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Monitor | Temperatura e Umidade</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.0/mqttws31.js"
+        integrity="sha512-e6nMrZX9Li26UyD0znvtLkki+E40EzsK0CGUt+EHdC8cAxlakzJfbsgChf+M4df1P/hxKT8DN0Q7ktK1QnOtWg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+    </script>
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <main class="pagina">
+
+        <header class="cabecalho">
+
+            <div class="marca">
+                <div class="icone-marca">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+
+                <div>
+                    <span class="mini-titulo">MONITOR AMBIENTAL</span>
+                    <h1>Temperatura & Umidade</h1>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-ponto"></span>
+                <span>Monitoramento ativo</span>
+            </div>
+
+        </header>
+
+
+        <section class="introducao">
+
+            <div>
+                <span class="etiqueta">
+                    <i class="fa-solid fa-leaf"></i>
+                    Ambiente em tempo real
+                </span>
+
+                <h2>
+                    Acompanhe o clima
+                    <span>ao seu redor.</span>
+                </h2>
+
+                <p>
+                    Visualize os dados do ambiente em tempo real
+                    através do monitoramento conectado.
+                </p>
+            </div>
+
+            <div class="flor-decorativa">
+                <div class="flor">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <b></b>
+                </div>
+
+                <i class="fa-solid fa-leaf folha folha-1"></i>
+                <i class="fa-solid fa-leaf folha folha-2"></i>
+            </div>
+
+        </section>
+
+
+        <section class="cards">
+
+            <!-- CARD TEMPERATURA -->
+            <article class="card temperatura">
+
+                <div class="card-topo">
+
+                    <div class="icone-card">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+
+                    <span class="card-legenda">
+                        Temperatura
+                    </span>
+
+                    <i class="fa-solid fa-arrow-trend-up tendencia"></i>
+
+                </div>
+
+
+                <div class="card-conteudo">
+
+                    <div class="valor-area">
+                        <h2 id="temp">0.0 °C</h2>
+                        <span>graus Celsius</span>
+                    </div>
+
+                    <div class="ilustracao temperatura-ilustracao">
+                        <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="linha-info">
+                    <span>
+                        <i class="fa-solid fa-circle-dot"></i>
+                        Leitura atual
+                    </span>
+
+                    <span class="ao-vivo">
+                        AO VIVO
+                    </span>
+                </div>
+
+            </article>
+
+
+            <!-- CARD UMIDADE -->
+            <article class="card umidade">
+
+                <div class="card-topo">
+
+                    <div class="icone-card">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <span class="card-legenda">
+                        Umidade
+                    </span>
+
+                    <i class="fa-solid fa-water tendencia"></i>
+
+                </div>
+
+
+                <div class="card-conteudo">
+
+                    <div class="valor-area">
+                        <h2 id="umid">0.0 %</h2>
+                        <span>umidade relativa do ar</span>
+                    </div>
+
+                    <div class="ilustracao umidade-ilustracao">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="linha-info">
+                    <span>
+                        <i class="fa-solid fa-circle-dot"></i>
+                        Leitura atual
+                    </span>
+
+                    <span class="ao-vivo">
+                        AO VIVO
+                    </span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <footer>
+
+            <div class="footer-esquerda">
+                <i class="fa-solid fa-satellite-dish"></i>
+                <span>Conectado ao sensor ESP32</span>
+            </div>
+
+            <div class="footer-direita">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Monitoramento inteligente</span>
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
